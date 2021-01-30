@@ -9,10 +9,26 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //Componentes}
 import { AppComponent } from './app.component';
+import { ListaEstudianteComponent } from './components/Estudiante/lista-estudiante/lista-estudiante.component';
+import { AdicionarEstudianteComponent } from './components/Estudiante/adicionar-estudiante/adicionar-estudiante.component';
+import { ActualizarEstudianteComponent } from './components/Estudiante/actualizar-estudiante/actualizar-estudiante.component';
+import { ListaProfesorComponent } from './components/Profesor/lista-profesor/lista-profesor.component';
+import { ActualizarProfesorComponent } from './components/Profesor/actualizar-profesor/actualizar-profesor.component';
+import { AdicionarProfesorComponent } from './components/Profesor/adicionar-profesor/adicionar-profesor.component';
+import { ListaAsignaturaComponent } from './components/Asignatura/lista-asignatura/lista-asignatura.component';
+import { AdicionarAsignarutaComponent } from './components/Asignatura/adicionar-asignaruta/adicionar-asignaruta.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListaEstudianteComponent,
+    AdicionarEstudianteComponent,
+    ActualizarEstudianteComponent,
+    ListaProfesorComponent,
+    ActualizarProfesorComponent,
+    AdicionarProfesorComponent,
+    ListaAsignaturaComponent,
+    AdicionarAsignarutaComponent
   ],
   imports: [
     BrowserModule,

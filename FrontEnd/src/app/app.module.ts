@@ -17,6 +17,8 @@ import { ActualizarProfesorComponent } from './components/Profesor/actualizar-pr
 import { AdicionarProfesorComponent } from './components/Profesor/adicionar-profesor/adicionar-profesor.component';
 import { ListaAsignaturaComponent } from './components/Asignatura/lista-asignatura/lista-asignatura.component';
 import { AdicionarAsignarutaComponent } from './components/Asignatura/adicionar-asignaruta/adicionar-asignaruta.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { AdicionarAsignarutaComponent } from './components/Asignatura/adicionar-
     ActualizarProfesorComponent,
     AdicionarProfesorComponent,
     ListaAsignaturaComponent,
-    AdicionarAsignarutaComponent
+    AdicionarAsignarutaComponent,
+    NavbarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

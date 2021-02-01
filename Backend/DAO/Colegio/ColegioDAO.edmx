@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PruebasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="eliminar_asignatura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_Asignatura" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="eliminar_estudiante" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_estudiante" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="eliminar_profesor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_profesor" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="lista_asignaturas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="lista_estudiantes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="lista_profesores" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="PruebasModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PruebasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BDCOLEGIO" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="eliminar_asignatura">
+            <Parameter Name="id_Asignatura" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="eliminar_estudiante">
+            <Parameter Name="id_estudiante" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="eliminar_profesor">
+            <Parameter Name="id_profesor" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="lista_asignaturas" ReturnType="Collection(PruebasModel.lista_asignaturas_Result)" />
+          <FunctionImport Name="lista_estudiantes" ReturnType="Collection(PruebasModel.lista_estudiantes_Result)" />
+          <FunctionImport Name="lista_profesores" ReturnType="Collection(PruebasModel.lista_profesores_Result)" />
+        </EntityContainer>
+        <ComplexType Name="lista_asignaturas_Result">
+          <Property Type="Int64" Name="idAsignatura" Nullable="false" />
+          <Property Type="String" Name="codigoAsignatura" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="nombreAsignatura" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="lista_estudiantes_Result">
+          <Property Type="Int64" Name="idEstudiante" Nullable="false" />
+          <Property Type="String" Name="nombreEstudiante" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="apellidoEstudiante" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="identificacionEstudiante" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="fechaNacimientoEstudiante" Nullable="true" />
+          <Property Type="String" Name="direccionEstudiante" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="telefonoEstudiante" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="lista_profesores_Result">
+          <Property Type="Int64" Name="idProfesor" Nullable="false" />
+          <Property Type="String" Name="nombreProfesor" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="apellidoProfesor" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="identificacionProfesor" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="fechaNacimientoProfesor" Nullable="true" />
+          <Property Type="String" Name="direccionProfesor" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="telefonoProfesor" Nullable="true" MaxLength="100" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PruebasModelStoreContainer" CdmEntityContainer="BDCOLEGIO" >
+          <FunctionImportMapping FunctionImportName="eliminar_asignatura" FunctionName="PruebasModel.Store.eliminar_asignatura" />
+          <FunctionImportMapping FunctionImportName="eliminar_estudiante" FunctionName="PruebasModel.Store.eliminar_estudiante" />
+          <FunctionImportMapping FunctionImportName="eliminar_profesor" FunctionName="PruebasModel.Store.eliminar_profesor" />
+          <FunctionImportMapping FunctionImportName="lista_asignaturas" FunctionName="PruebasModel.Store.lista_asignaturas">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PruebasModel.lista_asignaturas_Result">
+                <ScalarProperty Name="idAsignatura" ColumnName="idAsignatura" />
+                <ScalarProperty Name="codigoAsignatura" ColumnName="codigoAsignatura" />
+                <ScalarProperty Name="nombreAsignatura" ColumnName="nombreAsignatura" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="lista_estudiantes" FunctionName="PruebasModel.Store.lista_estudiantes">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PruebasModel.lista_estudiantes_Result">
+                <ScalarProperty Name="idEstudiante" ColumnName="idEstudiante" />
+                <ScalarProperty Name="nombreEstudiante" ColumnName="nombreEstudiante" />
+                <ScalarProperty Name="apellidoEstudiante" ColumnName="apellidoEstudiante" />
+                <ScalarProperty Name="identificacionEstudiante" ColumnName="identificacionEstudiante" />
+                <ScalarProperty Name="fechaNacimientoEstudiante" ColumnName="fechaNacimientoEstudiante" />
+                <ScalarProperty Name="direccionEstudiante" ColumnName="direccionEstudiante" />
+                <ScalarProperty Name="telefonoEstudiante" ColumnName="telefonoEstudiante" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="lista_profesores" FunctionName="PruebasModel.Store.lista_profesores">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PruebasModel.lista_profesores_Result">
+                <ScalarProperty Name="idProfesor" ColumnName="idProfesor" />
+                <ScalarProperty Name="nombreProfesor" ColumnName="nombreProfesor" />
+                <ScalarProperty Name="apellidoProfesor" ColumnName="apellidoProfesor" />
+                <ScalarProperty Name="identificacionProfesor" ColumnName="identificacionProfesor" />
+                <ScalarProperty Name="fechaNacimientoProfesor" ColumnName="fechaNacimientoProfesor" />
+                <ScalarProperty Name="direccionProfesor" ColumnName="direccionProfesor" />
+                <ScalarProperty Name="telefonoProfesor" ColumnName="telefonoProfesor" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

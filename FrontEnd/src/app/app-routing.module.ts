@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdicionarAsignarutaComponent } from './components/Asignatura/adicionar-asignaruta/adicionar-asignaruta.component';
+import { ListaAsignaturaComponent } from './components/Asignatura/lista-asignatura/lista-asignatura.component';
 import { ActualizarEstudianteComponent } from './components/Estudiante/actualizar-estudiante/actualizar-estudiante.component';
 import { AdicionarEstudianteComponent } from './components/Estudiante/adicionar-estudiante/adicionar-estudiante.component';
 import { ListaEstudianteComponent } from './components/Estudiante/lista-estudiante/lista-estudiante.component';
@@ -17,8 +18,8 @@ const routes: Routes = [
   {path:"ActualizarEstudiantes",component:ActualizarEstudianteComponent},
   {path:"ListaProfesores",component:ListaProfesorComponent},
   {path:"AdicionarProfesores",component:AdicionarProfesorComponent},
-  {path:"ActualizarProfesoress",component:ActualizarProfesorComponent},
-  {path:"ListaAsignaturas",component:ListaEstudianteComponent},
+  {path:"ActualizarProfesores",component:ActualizarProfesorComponent},
+  {path:"ListaAsignaturas",component:ListaAsignaturaComponent},
   {path:"AdicionarAsignaturas",component:AdicionarAsignarutaComponent},
   {path:"**", redirectTo:"Home",pathMatch:"full"},
   { path: '', pathMatch: 'full', redirectTo: 'Home' }

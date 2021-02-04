@@ -1,1 +1,35 @@
-<p>lista-asignatura works!</p>
+<table class="container table is-hoverable mt-6">
+    <thead>
+        <tr>
+            <th>
+                #
+            </th>
+            <th>
+                <abbr title="Codigo Asignatura">Codigo Asignatura</abbr>
+            </th>
+            <th>
+                <abbr title="Nombre Asignatura">Nombre Asignatura</abbr>
+            </th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>
+                <abbr title="#">#</abbr>
+            </th>
+            <th>
+                <abbr title="Codigo Asignatura">Codigo Asignatura</abbr>
+            </th>
+            <th>
+                <abbr title="Nombre Asignatura">Nombre Asignatura</abbr>
+            </th>
+        </tr>
+    </tfoot>
+    <tbody>
+        <tr *ngFor="let asignaturaItem of listaAsignatura; index as i">
+            <th>{{i+1}}</th>
+            <td>{{asignaturaItem.codigoAsignatura}}</td>
+            <td>{{asignaturaItem.nombreAsignatura}}</td>
+        </tr>
+    </tbody>
+</table>

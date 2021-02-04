@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 //Componentes}
 import { AppComponent } from './app.component';
@@ -19,6 +20,8 @@ import { ListaAsignaturaComponent } from './components/Asignatura/lista-asignatu
 import { AdicionarAsignarutaComponent } from './components/Asignatura/adicionar-asignaruta/adicionar-asignaruta.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
+import { FormsModule } from '@angular/forms';
+import { AsignaturaService } from './services/asignatura.service';
 
 @NgModule({
   declarations: [
@@ -39,9 +42,13 @@ import { HomeComponent } from './components/home/home.component';
     AppRoutingModule,
     NgxSpinnerModule,
     ToastrModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AsignaturaService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

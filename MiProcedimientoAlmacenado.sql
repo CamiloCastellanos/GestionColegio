@@ -12,16 +12,16 @@ CREATE PROCEDURE MiProcedimientoAlmacenado
 @xml_itemsIva XML
 AS
 BEGIN
-	select	id = ParamValues.ID.value('Id[1]','VARCHAR(50)'),
-			nombre = ParamValues.ID.value('Nombre[1]','VARCHAR(50)'),
-			productoId = ParamValues2.ID.value('Producto[1]','VARCHAR(50)'),
-			Porcentaje = ParamValues3.ID.value('Porcentaje[1]','VARCHAR(50)')
+select	usuario.item.value('Id[1]','VARCHAR(50)') as Id,
+		usuario.item.value('Nombre[1]','VARCHAR(50)') as Nombre,
+		compra.item.value('Valor[1]','int') as 'Valor Total',
+		producto.item.value('Porcentaje[1]','VARCHAR(50)') as Iva
 
-	from @xml_usuarios.nodes('Data/Usuario') as ParamValues(ID)
-	inner join @xml_compras.nodes('/Data/Item') as ParamValues2(ID)
-	on ParamValues.ID.value('Id[1]','VARCHAR(50)') = ParamValues2.ID.value('Usuario[1]','VARCHAR(50)')
-	inner join @xml_itemsIva .nodes('/Data/Producto') as ParamValues3(ID)
-	on ParamValues2.ID.value('Producto[1]','VARCHAR(50)') = ParamValues3.ID.value('IdProducto[1]','VARCHAR(50)')
+from @xml_usuarios.nodes('Data/Usuario') as usuario(item)
+left join @xml_compras.nodes('/Data/Item') as compra(item)
+	on usuario.item.value('Id[1]','VARCHAR(50)') = compra.item.value('Usuario[1]','VARCHAR(50)')
+left join @xml_itemsIva .nodes('/Data/Producto') as producto(item)
+	on compra.item.value('Producto[1]','VARCHAR(50)') = producto.item.value('IdProducto[1]','VARCHAR(50)')
 
 END
 GO

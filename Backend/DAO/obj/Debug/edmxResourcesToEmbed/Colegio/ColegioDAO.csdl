@@ -17,6 +17,15 @@
       <Parameter Name="codigoAsignatura" Mode="In" Type="String" />
       <Parameter Name="nombreAsignatura" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="crear_profesor">
+      <Parameter Name="nombreProfesor" Mode="In" Type="String" />
+      <Parameter Name="apellidoProfesor" Mode="In" Type="String" />
+      <Parameter Name="fechaNacimientoProfesor" Mode="In" Type="DateTime" />
+      <Parameter Name="direccionProfesor" Mode="In" Type="String" />
+      <Parameter Name="telefonoProfesor" Mode="In" Type="String" />
+      <Parameter Name="identificacionProfesor" Mode="In" Type="String" />
+      <Parameter Name="materias" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="lista_asignaturas_Result">
     <Property Type="Int64" Name="idAsignatura" Nullable="false" />

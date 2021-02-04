@@ -9,6 +9,15 @@
           <Parameter Name="codigoAsignatura" Type="nvarchar" Mode="In" />
           <Parameter Name="nombreAsignatura" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="crear_profesor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombreProfesor" Type="nvarchar" Mode="In" />
+          <Parameter Name="apellidoProfesor" Type="nvarchar" Mode="In" />
+          <Parameter Name="fechaNacimientoProfesor" Type="date" Mode="In" />
+          <Parameter Name="direccionProfesor" Type="nvarchar" Mode="In" />
+          <Parameter Name="telefonoProfesor" Type="nvarchar" Mode="In" />
+          <Parameter Name="identificacionProfesor" Type="nchar" Mode="In" />
+          <Parameter Name="materias" Type="nvarchar(max)" Mode="In" />
+        </Function>
         <Function Name="eliminar_asignatura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id_Asignatura" Type="bigint" Mode="In" />
         </Function>
@@ -42,6 +51,15 @@
           <FunctionImport Name="creacion_asignatura">
             <Parameter Name="codigoAsignatura" Mode="In" Type="String" />
             <Parameter Name="nombreAsignatura" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="crear_profesor">
+            <Parameter Name="nombreProfesor" Mode="In" Type="String" />
+            <Parameter Name="apellidoProfesor" Mode="In" Type="String" />
+            <Parameter Name="fechaNacimientoProfesor" Mode="In" Type="DateTime" />
+            <Parameter Name="direccionProfesor" Mode="In" Type="String" />
+            <Parameter Name="telefonoProfesor" Mode="In" Type="String" />
+            <Parameter Name="identificacionProfesor" Mode="In" Type="String" />
+            <Parameter Name="materias" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="lista_asignaturas_Result">
@@ -112,6 +130,7 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="creacion_asignatura" FunctionName="PruebasModel.Store.creacion_asignatura" />
+          <FunctionImportMapping FunctionImportName="crear_profesor" FunctionName="PruebasModel.Store.crear_profesor" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

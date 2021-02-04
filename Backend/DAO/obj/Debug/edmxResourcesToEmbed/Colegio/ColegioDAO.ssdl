@@ -4,6 +4,15 @@
     <Parameter Name="codigoAsignatura" Type="nvarchar" Mode="In" />
     <Parameter Name="nombreAsignatura" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="crear_profesor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombreProfesor" Type="nvarchar" Mode="In" />
+    <Parameter Name="apellidoProfesor" Type="nvarchar" Mode="In" />
+    <Parameter Name="fechaNacimientoProfesor" Type="date" Mode="In" />
+    <Parameter Name="direccionProfesor" Type="nvarchar" Mode="In" />
+    <Parameter Name="telefonoProfesor" Type="nvarchar" Mode="In" />
+    <Parameter Name="identificacionProfesor" Type="nchar" Mode="In" />
+    <Parameter Name="materias" Type="nvarchar(max)" Mode="In" />
+  </Function>
   <Function Name="eliminar_asignatura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id_Asignatura" Type="bigint" Mode="In" />
   </Function>

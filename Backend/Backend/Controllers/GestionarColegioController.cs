@@ -108,5 +108,32 @@ namespace Backend.Controllers
             coneccion.creacion_asignatura(asignatura.codigoAsignatura,asignatura.nombreAsignatura);
         }
 
+        // POST: api/CrearProfesor
+        /// <summary>
+        /// Elimina una asignatura por su id.
+        /// </summary>
+        /// <param name="profesor">profesor</param>
+        /// 
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
+        [Route("api/CrearProfesor")]
+        [HttpPost]
+        public void crearProfesor([FromBody] ProfesorModel profesor)
+        {
+            string asignaturas = "";
+            foreach(AsignaturaModel asignaturaItem in profesor.asignaturaProfesor)
+            {
+                asignaturas += asignaturaItem.idAsignatura + ",";
+            }
+            coneccion.crear_profesor(
+                                        profesor.nombreProfesor,
+                                        profesor.apellidoProfesor,
+                                        profesor.fechaNacimientoProfesor,
+                                        profesor.direccionProfesor,
+                                        profesor.telefonoProfesor,
+                                        profesor.identificacionProfesor,
+                                        asignaturas
+                                    );
+        }
+
     }
 }

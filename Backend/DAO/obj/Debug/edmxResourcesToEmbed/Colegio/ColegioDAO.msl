@@ -40,5 +40,6 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="creacion_asignatura" FunctionName="PruebasModel.Store.creacion_asignatura" />
+    <FunctionImportMapping FunctionImportName="crear_profesor" FunctionName="PruebasModel.Store.crear_profesor" />
   </EntityContainerMapping>
 </Mapping>

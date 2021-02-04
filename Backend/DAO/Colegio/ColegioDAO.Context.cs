@@ -82,5 +82,38 @@ namespace DAO.Colegio
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("creacion_asignatura", codigoAsignaturaParameter, nombreAsignaturaParameter);
         }
+    
+        public virtual int crear_profesor(string nombreProfesor, string apellidoProfesor, Nullable<System.DateTime> fechaNacimientoProfesor, string direccionProfesor, string telefonoProfesor, string identificacionProfesor, string materias)
+        {
+            var nombreProfesorParameter = nombreProfesor != null ?
+                new ObjectParameter("nombreProfesor", nombreProfesor) :
+                new ObjectParameter("nombreProfesor", typeof(string));
+    
+            var apellidoProfesorParameter = apellidoProfesor != null ?
+                new ObjectParameter("apellidoProfesor", apellidoProfesor) :
+                new ObjectParameter("apellidoProfesor", typeof(string));
+    
+            var fechaNacimientoProfesorParameter = fechaNacimientoProfesor.HasValue ?
+                new ObjectParameter("fechaNacimientoProfesor", fechaNacimientoProfesor) :
+                new ObjectParameter("fechaNacimientoProfesor", typeof(System.DateTime));
+    
+            var direccionProfesorParameter = direccionProfesor != null ?
+                new ObjectParameter("direccionProfesor", direccionProfesor) :
+                new ObjectParameter("direccionProfesor", typeof(string));
+    
+            var telefonoProfesorParameter = telefonoProfesor != null ?
+                new ObjectParameter("telefonoProfesor", telefonoProfesor) :
+                new ObjectParameter("telefonoProfesor", typeof(string));
+    
+            var identificacionProfesorParameter = identificacionProfesor != null ?
+                new ObjectParameter("identificacionProfesor", identificacionProfesor) :
+                new ObjectParameter("identificacionProfesor", typeof(string));
+    
+            var materiasParameter = materias != null ?
+                new ObjectParameter("materias", materias) :
+                new ObjectParameter("materias", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("crear_profesor", nombreProfesorParameter, apellidoProfesorParameter, fechaNacimientoProfesorParameter, direccionProfesorParameter, telefonoProfesorParameter, identificacionProfesorParameter, materiasParameter);
+        }
     }
 }

@@ -31,7 +31,7 @@ export class ListaEstudianteComponent implements OnInit {
         let estudiante: EstudianteModel = new EstudianteModel();
         estudiante.apellidoEstudiante = element["apellidoEstudiante"];
         estudiante.direccionEstudiante = element["direccionEstudiante"];
-        estudiante.fechaNacimientoEstudiante = element["fechaNacimientoEstudiante"];
+        estudiante.fechaNacimientoEstudiante = new Date(element["fechaNacimientoEstudiante"]);
         estudiante.idEstudiante = element["idEstudiante"];
         estudiante.identificacionEstudiante = element["identificacionEstudiante"];
         estudiante.nombreEstudiante = element["nombreEstudiante"];

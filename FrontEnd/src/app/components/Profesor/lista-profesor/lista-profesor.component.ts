@@ -30,7 +30,7 @@ export class ListaProfesorComponent implements OnInit {
         let profesor: ProfesorModel = new ProfesorModel();
         profesor.apellidoProfesor = element["apellidoProfesor"];
         profesor.direccionProfesor = element["direccionProfesor"];
-        profesor.fechaNacimientoProfesor = element["fechaNacimientoProfesor"];
+        profesor.fechaNacimientoProfesor = new Date(element["fechaNacimientoProfesor"]);
         profesor.idProfesor = element["idProfesor"];
         profesor.identificacionProfesor = element["identificacionProfesor"];
         profesor.nombreProfesor = element["nombreProfesor"];

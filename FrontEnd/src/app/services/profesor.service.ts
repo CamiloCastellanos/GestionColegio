@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ProfesorModel } from '../Models/profesor.model';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,18 @@ export class ProfesorService {
     }
 
     let apiURL: string = this.url + "api/EliminarProfesor";
+    return this.http.post(
+      apiURL,
+      data
+    );
+  }
+
+  adicionarProfesor(profesor: ProfesorModel): Observable<any> {
+    let data = {
+      ...profesor
+    }
+
+    let apiURL: string = this.url + "api/CrearProfesor";
     return this.http.post(
       apiURL,
       data

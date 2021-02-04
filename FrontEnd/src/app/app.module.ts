@@ -24,6 +24,7 @@ import { FormsModule } from '@angular/forms';
 import { AsignaturaService } from './services/asignatura.service';
 import { EstudianteService } from './services/estudiante.service';
 import { ProfesorService } from './services/profesor.service';
+import { EdadPipe } from './pipes/edad.pipe';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ProfesorService } from './services/profesor.service';
     ListaAsignaturaComponent,
     AdicionarAsignarutaComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    EdadPipe
   ],
   imports: [
     BrowserModule,

@@ -22,6 +22,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { AsignaturaService } from './services/asignatura.service';
+import { EstudianteService } from './services/estudiante.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { AsignaturaService } from './services/asignatura.service';
     HttpClientModule
   ],
   providers: [
-    AsignaturaService
+    AsignaturaService,
+    EstudianteService
   ],
   bootstrap: [AppComponent]
 })

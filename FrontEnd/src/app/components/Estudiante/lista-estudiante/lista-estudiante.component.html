@@ -19,6 +19,7 @@
             <th>
                 <abbr title="Telefono Estudiante">Telefono Estudiante</abbr>
             </th>
+            <th></th>
         </tr>
     </thead>
     <tfoot>
@@ -41,16 +42,22 @@
             <th>
                 <abbr title="Telefono Estudiante">Telefono Estudiante</abbr>
             </th>
+            <th></th>
         </tr>
     </tfoot>
     <tbody>
         <tr *ngFor="let estudianteItem of listaEstudiante; index as i">
             <th>{{i+1}}</th>
             <td>{{estudianteItem.identificacionEstudiante | titlecase}}</td>
-            <td>{{estudianteItem.nombreEstudiante| titlecase}}</td>
+            <td>{{estudianteItem.nombreEstudiante +' '+ estudianteItem.apellidoEstudiante| titlecase}}</td>
             <td>{{estudianteItem.fechaNacimientoEstudiante | date:"MM/dd/yy"}}</td>
             <td>{{estudianteItem.direccionEstudiante| uppercase}}</td>
             <td>{{estudianteItem.telefonoEstudiante| titlecase}}</td>
+            <td>
+                <button class="button is-danger is-outlined" (click)="eliminarestudiante(estudianteItem)">
+                  <i class="fas fa-user-minus"></i>
+                </button>
+            </td>
         </tr>
 
     </tbody>

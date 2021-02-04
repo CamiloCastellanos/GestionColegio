@@ -16,4 +16,16 @@ export class EstudianteService {
       apiURL
     );
   }
+
+  eliminarEstudiante(idEstudiante:number):Observable<any>{
+    let data = {
+      idEstudiante:idEstudiante
+    }
+
+    let apiURL: string = this.url + "api/EliminarEstudiante";
+    return this.http.post(
+      apiURL,
+      data
+    );
+  }
 }

@@ -13,7 +13,6 @@ export class AsignaturaService {
 
   listaAsignatura(): Observable<any> {
     let apiURL: string = this.url + "api/ListaAsignaturas";
-    const data = {};
     return this.http.get(
       apiURL
     );

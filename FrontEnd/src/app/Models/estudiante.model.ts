@@ -8,5 +8,5 @@ export class EstudianteModel {
   public direccionEstudiante: number;
   public telefonoEstudiante: number;
   public identificacionEstudiante: number;
-  public asignaturaEstudiante: AsignaturaModel[];
+  public asignaturaEstudiante: AsignaturaModel[]=[];
 }

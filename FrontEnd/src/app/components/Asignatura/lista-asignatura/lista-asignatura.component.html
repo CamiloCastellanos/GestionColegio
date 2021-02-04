@@ -30,8 +30,8 @@
     <tbody>
         <tr *ngFor="let asignaturaItem of listaAsignatura; index as i">
             <th>{{i+1}}</th>
-            <td>{{asignaturaItem.codigoAsignatura}}</td>
-            <td>{{asignaturaItem.nombreAsignatura}}</td>
+            <td>{{asignaturaItem.codigoAsignatura | uppercase}}</td>
+            <td>{{asignaturaItem.nombreAsignatura | titlecase}}</td>
             <td>
                 <button class="button is-danger is-outlined" (click)="eliminarAsignatura(asignaturaItem.idAsignatura)">
                   <i class="fas fa-trash-alt"></i>

@@ -10,7 +10,9 @@ export class EdadPipe implements PipeTransform {
     if (fechaActual.getDate() > fecha.getDate() && fechaActual.getMonth() > fecha.getMonth()) {
       return fechaActual.getFullYear() - fecha.getFullYear();
     }
-    return (fechaActual.getFullYear() - fecha.getFullYear()) - 1;
+    return ((fechaActual.getFullYear() - fecha.getFullYear()) - 1) > 0
+      ? (fechaActual.getFullYear() - fecha.getFullYear() -1 )
+      : (((fechaActual.getFullYear() - fecha.getFullYear())));
 
   }
 

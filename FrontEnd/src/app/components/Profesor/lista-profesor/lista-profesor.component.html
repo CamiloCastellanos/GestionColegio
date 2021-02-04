@@ -54,7 +54,11 @@
                 <td>{{profesorItem.fechaNacimientoProfesor | date:"MM/dd/yy"}}</td>
                 <td>{{profesorItem.direccionProfesor | uppercase}}</td>
                 <td>{{profesorItem.telefonoProfesor | titlecase}}</td>
-                <td></td>
+                <td>
+                    <button class="button is-danger is-outlined" (click)="eliminarProfesor(profesorItem)">
+                    <i class="fas fa-user-minus"></i>
+                  </button>
+                </td>
             </tr>
 
         </tbody>

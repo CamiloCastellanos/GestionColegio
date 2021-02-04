@@ -18,5 +18,17 @@ export class ProfesorService {
     );
   }
 
+  eliminarProfesor(idProfesor:number):Observable<any>{
+    let data = {
+      idProfesor:idProfesor
+    }
+
+    let apiURL: string = this.url + "api/EliminarProfesor";
+    return this.http.post(
+      apiURL,
+      data
+    );
+  }
+
 
 }

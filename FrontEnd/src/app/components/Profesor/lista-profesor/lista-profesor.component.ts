@@ -45,4 +45,25 @@ export class ListaProfesorComponent implements OnInit {
     });
   }
 
+  eliminarProfesor(profesor:ProfesorModel){
+    this.spinnerService.show();
+
+    this._profesorService.eliminarProfesor(profesor.idProfesor).subscribe((resp) => {
+      this.toastr.success('Eliminacion Exitosa!', 'Profesor Eliminado', {
+        positionClass: 'toast-bottom-right',
+        timeOut: 15000
+      });
+      this.cargarLista();
+      this.spinnerService.hide();
+
+    }, (er) => {
+      this.toastr.error('Eliminación Fallida!', 'Profesor No logro ser Eliminado', {
+        positionClass: 'toast-bottom-right',
+        timeOut: 15000
+      });
+
+      this.spinnerService.hide();
+    });
+  }
+
 }

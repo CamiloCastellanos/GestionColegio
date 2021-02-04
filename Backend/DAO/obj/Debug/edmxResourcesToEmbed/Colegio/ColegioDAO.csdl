@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PruebasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BDCOLEGIO" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="eliminar_asignatura">
+      <Parameter Name="id_Asignatura" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="eliminar_estudiante">
+      <Parameter Name="id_estudiante" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="eliminar_profesor">
+      <Parameter Name="id_profesor" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="lista_asignaturas" ReturnType="Collection(PruebasModel.lista_asignaturas_Result)" />
+    <FunctionImport Name="lista_estudiantes" ReturnType="Collection(PruebasModel.lista_estudiantes_Result)" />
+    <FunctionImport Name="lista_profesores" ReturnType="Collection(PruebasModel.lista_profesores_Result)" />
+  </EntityContainer>
+  <ComplexType Name="lista_asignaturas_Result">
+    <Property Type="Int64" Name="idAsignatura" Nullable="false" />
+    <Property Type="String" Name="codigoAsignatura" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="nombreAsignatura" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="lista_estudiantes_Result">
+    <Property Type="Int64" Name="idEstudiante" Nullable="false" />
+    <Property Type="String" Name="nombreEstudiante" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="apellidoEstudiante" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="identificacionEstudiante" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="fechaNacimientoEstudiante" Nullable="true" />
+    <Property Type="String" Name="direccionEstudiante" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="telefonoEstudiante" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="lista_profesores_Result">
+    <Property Type="Int64" Name="idProfesor" Nullable="false" />
+    <Property Type="String" Name="nombreProfesor" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="apellidoProfesor" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="identificacionProfesor" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="fechaNacimientoProfesor" Nullable="true" />
+    <Property Type="String" Name="direccionProfesor" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="telefonoProfesor" Nullable="true" MaxLength="100" />
+  </ComplexType>
+</Schema>

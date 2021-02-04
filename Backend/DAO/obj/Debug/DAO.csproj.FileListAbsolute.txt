@@ -1,0 +1,11 @@
+D:\Pruebas Trabajo\GestionColegio\Backend\DAO\bin\Debug\DAO.dll.config
+D:\Pruebas Trabajo\GestionColegio\Backend\DAO\bin\Debug\DAO.dll
+D:\Pruebas Trabajo\GestionColegio\Backend\DAO\bin\Debug\DAO.pdb
+D:\Pruebas Trabajo\GestionColegio\Backend\DAO\bin\Debug\EntityFramework.dll
+D:\Pruebas Trabajo\GestionColegio\Backend\DAO\bin\Debug\EntityFramework.SqlServer.dll
+D:\Pruebas Trabajo\GestionColegio\Backend\DAO\bin\Debug\EntityFramework.xml
+D:\Pruebas Trabajo\GestionColegio\Backend\DAO\bin\Debug\EntityFramework.SqlServer.xml
+D:\Pruebas Trabajo\GestionColegio\Backend\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+D:\Pruebas Trabajo\GestionColegio\Backend\DAO\obj\Debug\DAO.csproj.CopyComplete
+D:\Pruebas Trabajo\GestionColegio\Backend\DAO\obj\Debug\DAO.dll
+D:\Pruebas Trabajo\GestionColegio\Backend\DAO\obj\Debug\DAO.pdb

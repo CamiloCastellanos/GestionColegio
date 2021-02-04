@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PruebasModelStoreContainer" CdmEntityContainer="BDCOLEGIO">
+    <FunctionImportMapping FunctionImportName="eliminar_asignatura" FunctionName="PruebasModel.Store.eliminar_asignatura" />
+    <FunctionImportMapping FunctionImportName="eliminar_estudiante" FunctionName="PruebasModel.Store.eliminar_estudiante" />
+    <FunctionImportMapping FunctionImportName="eliminar_profesor" FunctionName="PruebasModel.Store.eliminar_profesor" />
+    <FunctionImportMapping FunctionImportName="lista_asignaturas" FunctionName="PruebasModel.Store.lista_asignaturas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PruebasModel.lista_asignaturas_Result">
+          <ScalarProperty Name="idAsignatura" ColumnName="idAsignatura" />
+          <ScalarProperty Name="codigoAsignatura" ColumnName="codigoAsignatura" />
+          <ScalarProperty Name="nombreAsignatura" ColumnName="nombreAsignatura" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="lista_estudiantes" FunctionName="PruebasModel.Store.lista_estudiantes">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PruebasModel.lista_estudiantes_Result">
+          <ScalarProperty Name="idEstudiante" ColumnName="idEstudiante" />
+          <ScalarProperty Name="nombreEstudiante" ColumnName="nombreEstudiante" />
+          <ScalarProperty Name="apellidoEstudiante" ColumnName="apellidoEstudiante" />
+          <ScalarProperty Name="identificacionEstudiante" ColumnName="identificacionEstudiante" />
+          <ScalarProperty Name="fechaNacimientoEstudiante" ColumnName="fechaNacimientoEstudiante" />
+          <ScalarProperty Name="direccionEstudiante" ColumnName="direccionEstudiante" />
+          <ScalarProperty Name="telefonoEstudiante" ColumnName="telefonoEstudiante" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="lista_profesores" FunctionName="PruebasModel.Store.lista_profesores">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PruebasModel.lista_profesores_Result">
+          <ScalarProperty Name="idProfesor" ColumnName="idProfesor" />
+          <ScalarProperty Name="nombreProfesor" ColumnName="nombreProfesor" />
+          <ScalarProperty Name="apellidoProfesor" ColumnName="apellidoProfesor" />
+          <ScalarProperty Name="identificacionProfesor" ColumnName="identificacionProfesor" />
+          <ScalarProperty Name="fechaNacimientoProfesor" ColumnName="fechaNacimientoProfesor" />
+          <ScalarProperty Name="direccionProfesor" ColumnName="direccionProfesor" />
+          <ScalarProperty Name="telefonoProfesor" ColumnName="telefonoProfesor" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

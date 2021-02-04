@@ -1,1 +1,62 @@
-<p>lista-profesor works!</p>
+<div class="container mt-6">
+    <table class="container table is-hoverable mt-6">
+        <thead>
+            <tr>
+                <th>
+                    #
+                </th>
+                <th>
+                    <abbr title="Identifiacion Profesor">Identifiacion Profesor</abbr>
+                </th>
+                <th>
+                    <abbr title="Nombre Profesor">Nombre Profesor</abbr>
+                </th>
+                <th>
+                    <abbr title="Edad Profesor">Edad Profesor</abbr>
+                </th>
+                <th>
+                    <abbr title="Direccion Profesor">Direccion Profesor</abbr>
+                </th>
+                <th>
+                    <abbr title="Telefono Profesor">Telefono Profesor</abbr>
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>
+                    #
+                </th>
+                <th>
+                    <abbr title="Identifiacion Profesor">Identifiacion Profesor</abbr>
+                </th>
+                <th>
+                    <abbr title="Nombre Profesor">Nombre Profesor</abbr>
+                </th>
+                <th>
+                    <abbr title="Edad Profesor">Edad Profesor</abbr>
+                </th>
+                <th>
+                    <abbr title="Direccion Profesor">Direccion Profesor</abbr>
+                </th>
+                <th>
+                    <abbr title="Telefono Profesor">Telefono Profesor</abbr>
+                </th>
+                <th></th>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr *ngFor="let profesorItem of listaProfesor; index as i">
+                <th>{{i+1}}</th>
+                <td>{{profesorItem.identificacionProfesor | titlecase}}</td>
+                <td>{{profesorItem.nombreProfesor + ' ' + profesorItem.apellidoProfesor| titlecase}}</td>
+                <td>{{profesorItem.fechaNacimientoProfesor | date:"MM/dd/yy"}}</td>
+                <td>{{profesorItem.direccionProfesor | uppercase}}</td>
+                <td>{{profesorItem.telefonoProfesor | titlecase}}</td>
+                <td></td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

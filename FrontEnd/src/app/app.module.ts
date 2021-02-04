@@ -23,6 +23,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { AsignaturaService } from './services/asignatura.service';
 import { EstudianteService } from './services/estudiante.service';
+import { ProfesorService } from './services/profesor.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { EstudianteService } from './services/estudiante.service';
   ],
   providers: [
     AsignaturaService,
-    EstudianteService
+    EstudianteService,
+    ProfesorService
   ],
   bootstrap: [AppComponent]
 })

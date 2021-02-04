@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AsignaturaModel } from '../Models/asignatura.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AsignaturaService {
 
-  private url:string ="http://localhost:44309/";
+  private url: string = "http://localhost:44309/";
 
   constructor(private http: HttpClient) { }
 
@@ -18,12 +19,24 @@ export class AsignaturaService {
     );
   }
 
-  eliminarAsignatura(idAsignatura:number):Observable<any>{
+  eliminarAsignatura(idAsignatura: number): Observable<any> {
     let data = {
-      idAsignatura:idAsignatura
+      idAsignatura: idAsignatura
     }
 
     let apiURL: string = this.url + "api/EliminarAsignatura";
+    return this.http.post(
+      apiURL,
+      data
+    );
+  }
+
+  adicionarAsignatura(asignatura: AsignaturaModel): Observable<any> {
+    let data = {
+      ...asignatura
+    }
+
+    let apiURL: string = this.url + "api/CrearAsignatura";
     return this.http.post(
       apiURL,
       data

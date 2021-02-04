@@ -18,4 +18,16 @@ export class AsignaturaService {
       apiURL
     );
   }
+
+  eliminarAsignatura(idAsignatura:number):Observable<any>{
+    let data = {
+      idAsignatura:idAsignatura
+    }
+
+    let apiURL: string = this.url + "api/EliminarAsignatura";
+    return this.http.post(
+      apiURL,
+      data
+    );
+  }
 }

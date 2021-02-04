@@ -12,4 +12,11 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  desplegar(): void {
+    var burger = document.querySelector('.burger');
+    var menu = document.querySelector('#navBarMenu');
+    burger.classList.toggle('is-active');
+    menu.classList.toggle('is-active');
+  }
+
 }

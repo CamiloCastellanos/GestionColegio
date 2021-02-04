@@ -1,1 +1,61 @@
-<p>navbar works!</p>
+<nav class="navbar is-link" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" routerLink="/Home">
+            <i class="fas fa-university" width="112" height="28"></i>
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navBarMenu" data-target="navBarMenu" id="burger" (click)="desplegar()">
+            <span class="has-text-white-ter"></span>
+            <span class="has-text-white-ter"></span>
+            <span class="has-text-white-ter"></span>
+        </a>
+    </div>
+
+    <div id="navBarMenu" class="navbar-menu has-background-link">
+        <!-- Estudiantes -->
+        <div class="navbar-item has-dropdown is-hoverable ">
+            <a class="navbar-link has-text-light ">
+                <i class="fas fa-user-graduate">Estudiantes</i>
+            </a>
+            <div class="navbar-dropdown">
+                <a class="navbar-item has-text-info" routerLink="/ListaEstudiantes">
+                    <i class="fas fa-list">Lista Estudiantes </i>
+                </a>
+                <a class="navbar-item has-text-info" routerLink="/AdicionarEstudiantes">
+                    <i class="fas fa-user-plus"></i>Adicionar Estudiante
+                </a>
+            </div>
+        </div>
+        <!-- Profesores -->
+        <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link has-text-light">
+                <i class="fas fa-chalkboard-teacher">Profesores</i>
+            </a>
+
+            <div class="navbar-dropdown">
+                <a class="navbar-item has-text-info" routerLink="/ListaProfesores">
+                    <i class="fas fa-list">Lista Profesores</i>
+                </a>
+                <a class="navbar-item has-text-info" routerLink="/AdicionarProfesores">
+                    <i class="fas fa-user-plus">Adicionar Profesores</i>
+                </a>
+            </div>
+        </div>
+        <!-- Asignaturas -->
+        <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link has-text-light">
+                <i class="fas fa-chalkboard">Asignaturas</i>
+            </a>
+
+            <div class="navbar-dropdown">
+                <a class="navbar-item has-text-info" routerLink="/ListaAsignaturas">
+                    <i class="fas fa-list">Lista Asignaturas</i>
+                </a>
+                <a class="navbar-item has-text-info" routerLink="/AdicionarAsignaturas">
+                    <i class="far fa-plus-square">Adicionar Asignaturas</i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</nav>

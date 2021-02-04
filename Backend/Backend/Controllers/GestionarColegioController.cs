@@ -66,16 +66,31 @@ namespace Backend.Controllers
 
         // POST: api/EliminarEstudiante
         /// <summary>
-        /// Elimina una asignatura por su id.
+        /// Elimina un Estudiante por su id.
         /// </summary>
         /// <param name="asignatura">Id de la Asignatura</param>
         /// 
         [EnableCors(origins: "*", headers: "*", methods: "*")]
         [Route("api/EliminarEstudiante")]
         [HttpPost]
-        public void eliminarEstudiante([FromBody] AsignaturaModel asignatura)
+        public void eliminarEstudiante([FromBody] EstudianteModel estudiante)
         {
-            coneccion.eliminar_estudiante(asignatura.idAsignatura);
+            coneccion.eliminar_estudiante(estudiante.idEstudiante);
+        }
+
+
+        // POST: api/EliminarProfesor
+        /// <summary>
+        /// Elimina un Profesor por su id.
+        /// </summary>
+        /// <param name="asignatura">Id de la Asignatura</param>
+        /// 
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
+        [Route("api/EliminarProfesor")]
+        [HttpPost]
+        public void EliminarProfesor([FromBody] ProfesorModel profesor)
+        {
+            coneccion.eliminar_profesor(profesor.idProfesor);
         }
 
 

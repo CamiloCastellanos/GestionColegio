@@ -69,5 +69,18 @@ namespace DAO.Colegio
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<lista_profesores_Result>("lista_profesores");
         }
+    
+        public virtual int creacion_asignatura(string codigoAsignatura, string nombreAsignatura)
+        {
+            var codigoAsignaturaParameter = codigoAsignatura != null ?
+                new ObjectParameter("codigoAsignatura", codigoAsignatura) :
+                new ObjectParameter("codigoAsignatura", typeof(string));
+    
+            var nombreAsignaturaParameter = nombreAsignatura != null ?
+                new ObjectParameter("nombreAsignatura", nombreAsignatura) :
+                new ObjectParameter("nombreAsignatura", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("creacion_asignatura", codigoAsignaturaParameter, nombreAsignaturaParameter);
+        }
     }
 }

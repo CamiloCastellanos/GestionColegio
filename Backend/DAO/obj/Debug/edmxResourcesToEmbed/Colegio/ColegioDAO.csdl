@@ -13,6 +13,10 @@
     <FunctionImport Name="lista_asignaturas" ReturnType="Collection(PruebasModel.lista_asignaturas_Result)" />
     <FunctionImport Name="lista_estudiantes" ReturnType="Collection(PruebasModel.lista_estudiantes_Result)" />
     <FunctionImport Name="lista_profesores" ReturnType="Collection(PruebasModel.lista_profesores_Result)" />
+    <FunctionImport Name="creacion_asignatura">
+      <Parameter Name="codigoAsignatura" Mode="In" Type="String" />
+      <Parameter Name="nombreAsignatura" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="lista_asignaturas_Result">
     <Property Type="Int64" Name="idAsignatura" Nullable="false" />

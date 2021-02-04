@@ -68,7 +68,7 @@ namespace Backend.Controllers
         /// <summary>
         /// Elimina un Estudiante por su id.
         /// </summary>
-        /// <param name="asignatura">Id de la Asignatura</param>
+        /// <param name="estudiante">Id del estudiante</param>
         /// 
         [EnableCors(origins: "*", headers: "*", methods: "*")]
         [Route("api/EliminarEstudiante")]
@@ -83,7 +83,7 @@ namespace Backend.Controllers
         /// <summary>
         /// Elimina un Profesor por su id.
         /// </summary>
-        /// <param name="asignatura">Id de la Asignatura</param>
+        /// <param name="profesor">Id del Profesor</param>
         /// 
         [EnableCors(origins: "*", headers: "*", methods: "*")]
         [Route("api/EliminarProfesor")]
@@ -93,6 +93,20 @@ namespace Backend.Controllers
             coneccion.eliminar_profesor(profesor.idProfesor);
         }
 
+
+        // POST: api/CrearAsignatura
+        /// <summary>
+        /// Elimina una asignatura por su id.
+        /// </summary>
+        /// <param name="asignatura">Asignatura</param>
+        /// 
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
+        [Route("api/CrearAsignatura")]
+        [HttpPost]
+        public void crearAsignatura([FromBody] AsignaturaModel asignatura)
+        {
+            coneccion.creacion_asignatura(asignatura.codigoAsignatura,asignatura.nombreAsignatura);
+        }
 
     }
 }

@@ -4,7 +4,11 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PruebasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PruebasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="creacion_asignatura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigoAsignatura" Type="nvarchar" Mode="In" />
+          <Parameter Name="nombreAsignatura" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="eliminar_asignatura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id_Asignatura" Type="bigint" Mode="In" />
         </Function>
@@ -18,24 +22,27 @@
         <Function Name="lista_estudiantes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="lista_profesores" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="PruebasModelStoreContainer" />
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PruebasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="BDCOLEGIO" annotation:LazyLoadingEnabled="true" >
           <FunctionImport Name="eliminar_asignatura">
-            <Parameter Name="id_Asignatura" Mode="In" Type="Int64" />
+          <Parameter Name="id_Asignatura" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="eliminar_estudiante">
-            <Parameter Name="id_estudiante" Mode="In" Type="Int64" />
+          <Parameter Name="id_estudiante" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="eliminar_profesor">
-            <Parameter Name="id_profesor" Mode="In" Type="Int64" />
+          <Parameter Name="id_profesor" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="lista_asignaturas" ReturnType="Collection(PruebasModel.lista_asignaturas_Result)" />
           <FunctionImport Name="lista_estudiantes" ReturnType="Collection(PruebasModel.lista_estudiantes_Result)" />
           <FunctionImport Name="lista_profesores" ReturnType="Collection(PruebasModel.lista_profesores_Result)" />
+          <FunctionImport Name="creacion_asignatura">
+            <Parameter Name="codigoAsignatura" Mode="In" Type="String" />
+            <Parameter Name="nombreAsignatura" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="lista_asignaturas_Result">
           <Property Type="Int64" Name="idAsignatura" Nullable="false" />
@@ -104,6 +111,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="creacion_asignatura" FunctionName="PruebasModel.Store.creacion_asignatura" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

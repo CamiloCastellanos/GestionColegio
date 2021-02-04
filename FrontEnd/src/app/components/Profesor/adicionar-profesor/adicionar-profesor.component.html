@@ -1,1 +1,92 @@
-<p>adicionar-profesor works!</p>
+<div class="container mt-6">
+    <div class="card">
+        <div class="card-content">
+            <p class="title has-text-centered">
+                Creación Profesor
+            </p>
+        </div>
+
+        <form (ngSubmit)="onSubmit(formulario)" #formulario="ngForm">
+            <div class="columns mx-1">
+                <div class="field column">
+                    <label class="label has-text-left">Nombre</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Nombre Profesor" name="nombre" maxlength="100" required>
+                    </div>
+                    <span class="help has-text-danger" *ngIf="formulario.submitted && formulario.controls['nombre'].errors">
+                      El Codigo es obligatorio
+                    </span>
+                </div>
+
+                <div class="field column">
+                    <label class="label has-text-left">Apellido</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Apellido Profesor" name="apellido" maxlength="100" required>
+                    </div>
+                    <span class="help has-text-danger" *ngIf="formulario.submitted && formulario.controls['apellido'].errors">
+                      El Codigo es obligatorio
+                    </span>
+                </div>
+            </div>
+
+            <div class="columns mx-1">
+                <div class="field column">
+                    <label class="label has-text-left">Identificación</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Identificacion Profesor" name="identificacion" maxlength="100" required>
+                    </div>
+                    <span class="help has-text-danger" *ngIf="formulario.submitted && formulario.controls['identificacion'].errors">
+                      El Codigo es obligatorio
+                    </span>
+                </div>
+
+                <div class="field column">
+                    <label class="label has-text-left">Fecha de nacimiento</label>
+                    <div class="control">
+                        <input class="input" type="date" placeholder="Fecha de Nacimiento Profesor" name="fecha" required>
+                    </div>
+                    <span class="help has-text-danger" *ngIf="formulario.submitted && formulario.controls['fecha'].errors">
+                      El Codigo es obligatorio
+                    </span>
+                </div>
+            </div>
+
+            <div class="columns mx-1">
+                <div class="field column">
+                    <label class="label has-text-left">Dirección</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Dirección Profesor" name="direccion" maxlength="100" required>
+                    </div>
+                    <span class="help has-text-danger" *ngIf="formulario.submitted && formulario.controls['direccion'].errors">
+                      El Codigo es obligatorio
+                    </span>
+                </div>
+
+                <div class="field column">
+                    <label class="label has-text-left">Telefono</label>
+                    <div class="control">
+                        <input class="input" type="tel" placeholder="Telefono Profesor" name="telefono" maxlength="100" required>
+                    </div>
+                    <span class="help has-text-danger" *ngIf="formulario.submitted && formulario.controls['telefono'].errors">
+                      El Codigo es obligatorio
+                    </span>
+                </div>
+            </div>
+
+        </form>
+
+        <footer class="card-footer">
+            <p class="card-footer-item">
+                <button class="btn btn-outline-danger btn-lg" routerLink="/ListaEmpleados">
+                  <i class="far fa-times-circle fa-lg"></i>
+                </button>
+            </p>
+            <p class="card-footer-item">
+                <button class="btn btn-outline-success btn-lg" type="submit">
+                  <i class="far fa-check-circle fa-lg"></i>
+                </button>
+            </p>
+        </footer>
+
+    </div>
+</div>
